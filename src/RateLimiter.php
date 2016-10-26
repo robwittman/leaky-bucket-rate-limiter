@@ -119,8 +119,9 @@ class RateLimiter {
 
         $bucket->fill();
         $this->save($bucket);
-        $response = $response->withHeader($this->settings['header'], $bucket->getCapacityString());
-
+        if($this->settings['header'] !== FALSE) {
+            $response = $response->withHeader($this->settings['header'], $bucket->getCapacityString());
+        }
         return $next($request, $response);
     }
 
