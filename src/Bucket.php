@@ -5,7 +5,7 @@ namespace LeakyBucketRateLimiter;
 class Bucket {
     /**
      * Total drips bucket holds
-     * @var [integer
+     * @var integer
      */
     protected $capacity;
 
@@ -41,8 +41,8 @@ class Bucket {
      * @return
      */
     public function fill($x = 1) {
-        $this->drips += $x;
-        return $this;
+        $drips = $this->getDrips();
+        $this->setDrips($drips += $x);
     }
 
     /**
@@ -109,7 +109,7 @@ class Bucket {
      * Set the number of drips in bucket
      * @param $drips
      */
-    protected function setDrips($drips) {
+    public function setDrips($drips) {
         $this->drips = $drips;
     }
 
@@ -128,7 +128,7 @@ class Bucket {
 
     }
 
-    protected function setTime($time) {
+    public function setTime($time) {
         $this->time = $time;
         return $this;
     }

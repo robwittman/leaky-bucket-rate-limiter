@@ -91,7 +91,6 @@ class RateLimiter {
 
         foreach($this->settings['ignore'] as $ignored_route) {
             if(!!preg_match("@^{$ignored_route}(/.)?$@", $route)) {
-                error_log("Skipping route");
                 return $next($request, $response);
             }
         }
@@ -144,9 +143,15 @@ class RateLimiter {
         return $this->storage->set($this->key, json_encode($bucket->getData()));
     }
 
+    /**
+     * Fetch our bucket from storage
+     * @param  string $key
+     * @return
+     */
     protected function get($key) {
         return json_decode($this->storage->get($key), TRUE);
     }
+
     /**
      * Add prefix / suffix to key, and store in property
      * @param string $key Key to throttle on

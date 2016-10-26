@@ -196,6 +196,10 @@ docker build -t <tag-name> .
 docker run -v $PWD:/opt -p "8001:8001" <container_name>
 ```
 
-The server can be accessed at :8001, and contains a mini app to play around with.
+The server can be accessed at :8001, and contains a mini app to play around with. Running tests is equally as easy, and is centered around docker
 
-**NOTE** Tests still have to be written
+```shell
+docker-compose up
+ocker-composee exec web bash
+phpunit
+```
