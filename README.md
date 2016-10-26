@@ -17,7 +17,7 @@ require_once('vendor/autoload.php');
 
 use LeakyBucketRateLimiter\RateLimiter;
 
-$slim = \Slim\\App();
+$slim = \Slim\App();
 
 $slim->add(new RateLimiter([
     'callback' => function(RequestInterface $request) {
