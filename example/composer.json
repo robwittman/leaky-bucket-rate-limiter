@@ -1,0 +1,12 @@
+{
+    "repositories" : [
+        {
+            "type" : "vcs",
+            "url" : "/opt"
+        }
+    ],
+    "require": {
+        "slim/slim": "^3.5",
+        "robwittman/leaky-bucket-rate-limiter" : "*"
+    }
+}
