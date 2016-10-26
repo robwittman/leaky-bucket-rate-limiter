@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Slim\\' => array($vendorDir . '/slim/slim/Slim'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
+    'LeakyBucketRateLimiter\\' => array($vendorDir . '/robwittman/leaky-bucket-rate-limiter/src'),
     'Interop\\Container\\' => array($vendorDir . '/container-interop/container-interop/src/Interop/Container'),
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
 );

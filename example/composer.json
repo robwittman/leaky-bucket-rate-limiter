@@ -8,5 +8,7 @@
     "require": {
         "slim/slim": "^3.5",
         "robwittman/leaky-bucket-rate-limiter" : "*"
-    }
+    },
+    "minimum-stability" : "dev",
+    "prefer-stable" : true
 }

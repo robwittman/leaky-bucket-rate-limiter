@@ -244,5 +244,36 @@
             "micro",
             "router"
         ]
+    },
+    {
+        "name": "robwittman/leaky-bucket-rate-limiter",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "/opt",
+            "reference": "d4c4693180973c2e74b09eaebc88022ed1ab0751"
+        },
+        "require": {
+            "php": "^5.5 || ^7.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^5.6"
+        },
+        "time": "2016-10-26 15:40:54",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "LeakyBucketRateLimiter\\": "src"
+            }
+        },
+        "authors": [
+            {
+                "name": "Rob Wittman",
+                "email": "rob@ihsdigital.com"
+            }
+        ],
+        "description": "PSR-7 Middleware for implementing a Leaky Bucket Rate Limiter"
     }
 ]

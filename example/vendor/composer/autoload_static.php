@@ -19,6 +19,10 @@ class ComposerStaticInit535d42896aba5a50abc93180b2cd5b9c
         array (
             'Psr\\Http\\Message\\' => 17,
         ),
+        'L' => 
+        array (
+            'LeakyBucketRateLimiter\\' => 23,
+        ),
         'I' => 
         array (
             'Interop\\Container\\' => 18,
@@ -37,6 +41,10 @@ class ComposerStaticInit535d42896aba5a50abc93180b2cd5b9c
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'LeakyBucketRateLimiter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/robwittman/leaky-bucket-rate-limiter/src',
         ),
         'Interop\\Container\\' => 
         array (

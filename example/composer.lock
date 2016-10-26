@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4467ab4cba33e2fc6c2d088c6512e2ba",
-    "content-hash": "193120e77f0ae2d93f56e64c07757b92",
+    "hash": "7cb8ef67bf576f6bf6eeea2cc84fcae2",
+    "content-hash": "bc98659f5a57fa7d279835b98e49106e",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -174,6 +174,35 @@
             "time": "2016-08-06 14:39:51"
         },
         {
+            "name": "robwittman/leaky-bucket-rate-limiter",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "/opt",
+                "reference": "d4c4693180973c2e74b09eaebc88022ed1ab0751"
+            },
+            "require": {
+                "php": "^5.5 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LeakyBucketRateLimiter\\": "src"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Rob Wittman",
+                    "email": "rob@ihsdigital.com"
+                }
+            ],
+            "description": "PSR-7 Middleware for implementing a Leaky Bucket Rate Limiter",
+            "time": "2016-10-26 15:40:54"
+        },
+        {
             "name": "slim/slim",
             "version": "3.5.0",
             "source": {
@@ -246,9 +275,9 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": [],
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
