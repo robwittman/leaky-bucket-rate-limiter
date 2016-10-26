@@ -151,7 +151,8 @@ $slim->add(new RateLimiter([
 ### Storage
 
 By default, the Rate Limiter will attempt to connect to a local redis instance at http://127.0.0.1:6379, as per `Predis\Client()`.This can be overridden by providing either an array of settings for `Predis\Client` to connect with,
-or providing an object with methods get() and set() for storing and retrieving data. If using docker-compose development container, just use `redis` as the hostname, and container linking will connect it.
+or providing an object with methods get() and set() for storing and retrieving data (mysql, memcached, mongo, etc). If using docker-compose development container, just use `redis` as the hostname, and container linking will connect it.
+
 ``` php
 $slim->add(new RateLimiter([
     // Rate limiter settings
@@ -171,9 +172,10 @@ class ObjectWithGetAndSetMethods {
         $this->{$key} = $value;
     }
 }
+$storage = new ObjectWithGetAndSetMethods();
 $slim->add(new RateLimiter([
     // Rate limiter settings
-], $objectWithGetAndSetMethods));
+], $storage));
 ```
 
 ### Development / Testing
