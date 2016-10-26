@@ -73,7 +73,7 @@ $slim->add(new RateLimiter([
 
 ```
 
-Once the bucket has a token to act on, it communicates with Redis to keep track of traffic. If the token is over it's request limit, it will return a 429 HTTP Code by default. This can be overidden by passing a `throttle` function to the constructor.
+Once the bucket has a token to act on, it communicates with Redis to keep track of traffic. If the token is over it's request limit, it will trigger the `throttle` function passed to the constructor.
 
 ### Parameters
 
@@ -102,6 +102,7 @@ $slim->add(new RateLimiter([
     };
 ]));
 ```
+
 **NOTE** All further settings assume `callback` and `throttle` parameters are already set
 
 #### Capacity and Leak
@@ -111,6 +112,20 @@ Capacity is the total amount of drips (requests) the bucket may contain. Leak is
 $slim->add(new RateLimiter([
     'capacity' => 45,
     'leak' => 1
+]));
+```
+
+
+### Ignored routes
+
+You can pass an array of routes that you do not want to rate limit. This completely bypasses the rate limit middleware, so they will not have respective headers either
+``` php
+$slim->add(new RateLimiter([
+    'ignore' => [
+        'auth/token',
+        'users/me',
+        'other/ignored/routes'
+    ]
 ]));
 ```
 
@@ -181,6 +196,4 @@ docker run -v $PWD:/opt -p "8001:8001" <container_name>
 
 The server can be accessed at :8001, and contains a mini app to play around with.
 
-### Testing
-
-TBD
+**NOTE** Tests still have to be written
