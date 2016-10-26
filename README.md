@@ -140,11 +140,14 @@ $slim->add(new RateLimiter([
 ```
 
 #### Header
-Specify what header to provide, containing Rate Limiting info. Set to false to disable
+Specify what header to provide, containing Rate Limiting info. Set to false to disable.
 ```php
 $slim->add(new RateLimiter([
     'header' => "Rate-Limiting-Meta"
 ]));
+
+// Rate-Limiting-Meta: X / Y
+// X = Current drips in bucket, Y = capacity
 ```
 
 
