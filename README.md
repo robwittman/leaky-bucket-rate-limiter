@@ -204,5 +204,5 @@ The server can be accessed at :8001, and contains a mini app to play around with
 ```shell
 docker-compose up
 docker-compose exec web bash
-phpunit
+vendor/bin/phpunit
 ```
