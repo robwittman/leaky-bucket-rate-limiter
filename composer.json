@@ -1,5 +1,5 @@
 {
-    "name": "robwittman/leaky-bucket-rate-limiter",
+    "name": "spysystem/leaky-bucket-rate-limiter",
     "description": "PSR-7 Middleware for implementing a Leaky Bucket Rate Limiter",
     "authors": [
         {

@@ -95,7 +95,7 @@ class RateLimiter {
             }
         }
         // Run our user-supplied function to get the key we can limit on
-        $meta = call_user_func($this->settings['callback'], array($request));
+        $meta = call_user_func($this->settings['callback'], $request);
 
         // $meta of TRUE triggers a rate limit override
         if($meta === TRUE) { return $next($request, $response); }
